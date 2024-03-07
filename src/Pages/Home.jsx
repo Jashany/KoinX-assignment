@@ -17,15 +17,20 @@ import Sentiment from './Components/Sentiments/Sentiments.jsx';
 const Home = () => {
 
     const { id } = useParams();
-    console.log(id)
     const [trending, setTrending] = useState([]);
     const [coin , setCoin] = useState([]);
 
     useEffect(() => {
-        axios.get('https://api.coingecko.com/api/v3/search/trending')
+        axios.get(('https://api.coingecko.com/api/v3/search/trending'),
+        {
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            }
+        }
+        )
         .then(res => {
             setTrending(res.data?.coins);
-            console.log(res.data?.coins);
         })
         .catch(error => {
             console.log(error);
@@ -37,7 +42,6 @@ const Home = () => {
             axios.get(`https://api.coingecko.com/api/v3/coins/${id}?localization=true&tickers=false&market_data=true&community_data=false&developer_data=false`)
             .then(res => {
                 setCoin(res.data);
-                console.log(res.data);
             })
             .catch(error => {
                 console.log(error);

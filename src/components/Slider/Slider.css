@@ -1,5 +1,6 @@
 .swipermain-post>div:nth-child(1)>img{
     height: 20px;
+
     width: 20px;
 }
 
@@ -7,6 +8,19 @@
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+
+.swipermain-post h5{
+    font-size: 1.5rem;
+    font-weight: 600;
+    
+}
+
+.swipermain-post p{
+    font-size: 1.25rem;
+    font-weight: 400;
+    opacity: 0.8;
 }
 
 .swiper-main{

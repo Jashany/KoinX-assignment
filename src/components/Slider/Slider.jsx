@@ -61,7 +61,9 @@ const Post = ({prop}) => {
                     {prop?.symbol}
                 </h5>
                 <p>
-                    {pricechange}
+                {pricechange > 0 ? 
+                                <span style={{color:"green"}} >▲ +{pricechange}%</span> : 
+                                <span style={{color:"red"}} >▼ {pricechange}%</span> } 
                 </p>
             </div>
             <div>

@@ -23,7 +23,9 @@ const TrendingPost = ({item}) => {
             <img src={item?.thumb} alt="" />
             <p>{item?.name}({item?.symbol})</p>
             </div>
-            <p>{pricechange}%</p>
+            <p>{pricechange > 0 ? 
+                                <span style={{color:"green"}} >▲ +{pricechange}%</span> : 
+                                <span style={{color:"red"}} >▼ {pricechange}%</span> } </p>
         </div>
         </Link>
      );

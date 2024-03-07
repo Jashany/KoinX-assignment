@@ -52,8 +52,8 @@ const Price = ({ coinData }) => {
                         <h1>${coinPrice.usd.toLocaleString()}.00</h1>
                         <p>
                             {coinPrice.usd_24h_change > 0 ? 
-                                <span className={styles.green}>+{coinPrice?.usd_24h_change.toFixed(2)}%</span> : 
-                                <span className={styles.red}>{coinPrice?.usd_24h_change.toFixed(2)}%</span> } 
+                                <span className={styles.green}>▲ +{coinPrice?.usd_24h_change.toFixed(2)}%</span> : 
+                                <span className={styles.red}>▼ {coinPrice?.usd_24h_change.toFixed(2)}%</span> } 
                         </p>
                         <p className={styles.hour}>
                             (24H)
