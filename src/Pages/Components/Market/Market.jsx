@@ -3,6 +3,15 @@ import styles from './Market.module.css';
 const Marketdata = ({coin}) => {
     return ( 
         <div className={styles.market}>
+            <div className={styles.nav}>
+                <a>Overview</a>
+                <a>Fundamentals</a>
+                <a>News Insights</a>
+                <a>Sentiments</a>
+                <a>Team</a>
+                <a>Techicals</a>
+                <a>Tokenomics</a>
+            </div>
             <h1>Performance</h1>
             <div className={styles.bar}>
             <PerformanceBar low={coin?.low_24h?.usd} high={coin?.high_24h?.usd} current={coin?.current_price?.usd} />
