@@ -25,6 +25,10 @@
     transition: all 0.3s ease;
 }
 
+.chart{
+    width: 40%;
+}
+
 .aboutpost h3{
     font-size: 20px;
     font-weight: 600;

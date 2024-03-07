@@ -1,10 +1,19 @@
 import { aboutdata } from "../../../data.mjs";
 import styles from './About.module.css';
 import DOMPurify from 'dompurify';
-import { PieChart } from '@mui/x-charts/PieChart';
+import { Chart } from "react-google-charts";
 
 
 const About = ({prop}) => {
+    const options = {
+        pieHole: 0.7,
+        pieSliceText: 'none',
+        slices: {
+            0: { color: '#0082fe' },
+            1: { color: '#faa002' }
+          }
+
+      };
     const piedata = aboutdata.piechartdata;
     const santizeddesc = DOMPurify.sanitize(prop.description?.en, {ALLOWED_TAGS: []})
     return ( 
@@ -36,21 +45,21 @@ const About = ({prop}) => {
                 </p>
             </div>
             <div className={styles.aboutsection}>
-                <h1></h1>
-                <h4></h4>
-                <PieChart
-  series={[
-    {
-      data: [
-        { id: 0, value: 10, label: 'series A' },
-        { id: 1, value: 15, label: 'series B' },
-        { id: 2, value: 20, label: 'series C' },
-      ],
-    },
-  ]}
-  width={400}
-  height={200}
-/>
+                <h1>{aboutdata.token.title}</h1>
+                <h4>{aboutdata.token.undertitle}</h4>
+                <div className={styles.chart}>
+                <Chart
+
+                    chartType="PieChart"
+                    width="100%"
+                    height="200px"
+                    data={piedata}
+                    options={options}
+                />
+                </div>
+                <p>
+                    {aboutdata.token.description}
+                </p>
             </div>
         </div>
      );

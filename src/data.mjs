@@ -52,7 +52,13 @@ export const aboutdata = {
     ],
     description2 :"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero at aliquid natus et exercitationem nemo quos voluptate hic praesentium recusandae. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus asperiores itaque laborum voluptates iste harum pariatur quidem optio incidunt consectetur. lorem ipsum dolor sit amet consectetur adipisicing elit.",
     piechartdata:[
-        { id: 0, value: 10, color: "#0082fe" },
-        { id: 1, value: 15, color: "#faa002" },
-    ]
+            ["type", "percentage"],
+            ["Crowdsale investors", 80,],
+            ["Foundation", 20],
+    ],
+    token:{
+        title:"Tokenomics",
+        undertitle:"Initial Distribution",
+        description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero at aliquid natus et exercitationem nemo quos voluptate hic praesentium recusandae. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus asperiores itaque laborum voluptates iste harum pariatur quidem optio incidunt consectetur. lorem ipsum dolor sit amet consectetur adipisicing elit."
+    }
 }
