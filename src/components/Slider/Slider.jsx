@@ -37,7 +37,7 @@ const Slider = ({prop,heading,option}) => {
                     {prop.map((item, index) => {
                         return(
                             <SwiperSlide key={index}>
-                                {option === 1 ? <Post prop={item.item} /> : <Secondpost prop={item} />}
+                                {option === 1 ? <Post prop={item?.item} /> : <Secondpost prop={item} />}
                             </SwiperSlide>
                         )
                     })}
@@ -50,15 +50,15 @@ const Slider = ({prop,heading,option}) => {
 export default Slider;
 
 const Post = ({prop}) => {
-    const pricechange = prop.data.price_change_percentage_24h.inr.toFixed(2);
-    const sanitizedPrice = DOMPurify.sanitize(prop.data.price, {ALLOWED_TAGS: []});
+    const pricechange = prop?.data?.price_change_percentage_24h.inr.toFixed(2);
+    const sanitizedPrice = DOMPurify.sanitize(prop?.data?.price, {ALLOWED_TAGS: []});
     return ( 
         <Link to={`/${prop.id}`} className="link">
         <div className="swipermain-post">
             <div>
-                <img src={prop.thumb} alt="" />
+                <img src={prop?.thumb} alt="" />
                 <h5>
-                    {prop.symbol}
+                    {prop?.symbol}
                 </h5>
                 <p>
                     {pricechange}
@@ -66,7 +66,7 @@ const Post = ({prop}) => {
             </div>
             <div>
                 <p>{sanitizedPrice}</p>
-                <img src={prop.data?.sparkline} alt="" />
+                <img src={prop?.data?.sparkline} alt="" />
             </div>
         </div>
         </Link>
