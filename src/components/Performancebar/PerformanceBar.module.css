@@ -1,0 +1,51 @@
+.progressBarContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 50px;
+}
+
+.progressBarContainer p{
+    font-size: clamp(0.8rem, 2vw, 1.25rem);
+}
+
+.todaylow{
+    width: fit-content;
+}
+
+.todayhigh{
+    width: fit-content;
+}
+.progressThumb{
+    text-align: right;
+    margin-top: 20px;
+}
+.progressThumb p:nth-child(1){
+    margin-right: 20px;
+}
+
+
+
+
+.progressBar{
+    height: 20px;
+    background: rgb(34,193,195);
+    background: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    border-radius: 10px;
+    width: 70%;
+}
+
+@media screen and (max-width: 768px){
+    
+    
+    .progressThumb p:nth-child(1){
+        margin-right: 0px;
+    }
+    .progressBar{
+        margin-top: 20px;
+        width: 90%;
+        margin-inline: auto;
+        height: 5px;
+    }
+    
+    
+}

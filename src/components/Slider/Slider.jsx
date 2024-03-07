@@ -14,9 +14,23 @@ const Slider = ({prop,heading}) => {
         <div className="swipermain-inner">
         <Swiper
         spaceBetween={50}
-        slidesPerView={5}
+        slidesPerView={1}
         navigation={true} 
         modules={[Navigation]}
+        breakpoints={{
+            440: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView:5,
+              spaceBetween: 50,
+            },
+          }}
       >
       {prop.map((item, index) => {
           return(

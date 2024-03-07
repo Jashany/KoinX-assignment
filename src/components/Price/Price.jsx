@@ -41,7 +41,9 @@ const Price = ({ coinData }) => {
                 <h1>{coinData.name}</h1>
                 <p>{coinData.symbol?.toUpperCase()}</p>
                 <div className={styles.rank}>
-                    Rank #{coinData.market_cap_rank}
+                   <p>
+                   Rank #{coinData.market_cap_rank}
+                    </p> 
                 </div>
             </div>
             <div className={styles.price_rate}>

@@ -30,7 +30,7 @@
 }
 
 .aboutpost h3{
-    font-size: 20px;
+    font-size: clamp(0.9rem,2vw,1.5rem);
     font-weight: 600;
     color: #fff;
     margin-bottom: 20px;
@@ -43,20 +43,44 @@
 }
 
 .aboutsection h1{
-    font-size: 2rem;
+    font-size: clamp(1.5rem,2.5vw,2rem);
     font-weight: 600;
     margin-bottom: 20px;
 }
 
 .aboutsection h4{
-    font-size: 1.25rem;
+    font-size: clamp(1rem,1.5vw,1.25rem);
     font-weight: 600;
     margin-bottom: 20px;
 }
 
 .aboutsection p{
-    font-size: 1rem;
+    font-size: clamp(0.75rem,1.5vw,1rem);
     font-weight: 400;
     margin-bottom: 30px;
 }
 
+@media screen and (max-width: 768px){
+    .aboutpostdiv{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .chart{
+        width: 100%;
+
+    }
+    .aboutpost{
+        padding: 10px;
+    }
+
+    .aboutpost>img{
+        width: 120px;
+        height: 100px;
+    }
+    .aboutpost button{
+        padding: 5px 10px;
+    }
+   
+    
+}

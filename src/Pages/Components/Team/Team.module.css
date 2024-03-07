@@ -10,6 +10,13 @@
     margin-bottom: 20px;
 }
 
+.teamdata_main p{
+    font-size: clamp(0.8rem,1.5vw,1.2rem);
+    font-weight: 500;
+    margin-bottom: 20px;
+
+}
+
 .teamcards{
     display: flex;
     flex-direction: column;
@@ -26,4 +33,26 @@
     height: 100px;
     width: 95px;
     border-radius: 10px;
+}
+
+.team_card p{
+    font-size: clamp(0.75rem,1.5vw,1rem);
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px){
+    .team_card{
+        flex-direction: column;
+    }
+
+    .teamcards{
+        margin-left: 0;
+    }
+
+    .team_card div:nth-child(1){
+        width: 100%;
+        text-align: center;
+    }
+    
 }

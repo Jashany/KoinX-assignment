@@ -26,3 +26,24 @@
 .swipers{
     margin-top: 10rem;
 }
+
+@media screen and (max-width: 768px){
+    .main{
+        width: 90%;
+    }
+    .innermain{
+        flex-direction: column;
+    }
+    .left{
+        width: 100%;
+    }
+    .right{
+        width: 100%;
+    }
+    .swipers{
+        margin-top: 5rem;
+    }
+
+
+    
+}

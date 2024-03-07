@@ -11,6 +11,7 @@ import Team from './Components/Team/Team.jsx';
 import { teamdata } from '../data.mjs';
 import About from './Components/About/About.jsx';
 import { useParams } from 'react-router-dom';
+import Marketdata from './Components/Market/Market.jsx';
 
 const Home = () => {
 
@@ -24,6 +25,17 @@ const Home = () => {
         .then(res => {
             setTrending(res.data.coins);
             console.log(res.data.coins);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    }, []);
+
+    useEffect(() => {
+        axios.get('/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=15&page=1&sparkline=false&locale=en')
+        .then(res => {
+            setMaylike(res.data);
+            console.log(res.data);
         })
         .catch(error => {
             console.log(error);
@@ -53,6 +65,7 @@ const Home = () => {
         <div className={styles.left}>
             <Price coinData={coin} />
             <Chart coin={coin} />
+            <Marketdata coin={coin?.market_data} />
             <About prop={coin} />
             <Team teamdata={teamdata} />
         </div>
@@ -64,6 +77,7 @@ const Home = () => {
     <div className={styles.swipers}>
         <Slider prop={trending} heading={"You may Also Like"} />
         <Slider prop={trending} heading={"Trending"} />
+        
     </div>
         </div>
      );

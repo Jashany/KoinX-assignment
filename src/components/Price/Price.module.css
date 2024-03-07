@@ -23,11 +23,17 @@
 .rank{
     background-color: #768396;
     padding: 8px 10px;
+
     border-radius: 10px;
     color: white;
     margin-left: 30px;
 }
 
+.rank p{
+    font-size: clamp(0.8rem,1.5vw,1rem);
+    font-weight: 600;
+
+}
 .price_rate{
     margin-block: 30px;
     display: flex;
