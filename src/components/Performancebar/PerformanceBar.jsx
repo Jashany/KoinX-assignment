@@ -19,9 +19,9 @@ const PerformanceBar = ({ low, high, current }) => {
             <div className={styles.progressBar}>
                 <div className={styles.progressThumb} style={{ width: `${widthPercent}%` }} >
                     <p>
-                    🢁
+                    ▲
                     </p>
-                    <p>
+                    <p className={styles.currentprice}>
                         ${current}
                     </p>
                 </div>

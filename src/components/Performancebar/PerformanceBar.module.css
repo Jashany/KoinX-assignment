@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     margin-block: 50px;
+    align-items: center;
 }
 
 .progressBarContainer p{
@@ -27,21 +28,26 @@
 
 
 .progressBar{
-    height: 20px;
+    height:10px;
     background: rgb(34,193,195);
     background: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
     border-radius: 10px;
     width: 70%;
 }
 
+.currentprice{
+    font-size: clamp(0.75rem,1.5vw,1rem) !important;
+    font-weight: 400 !important;
+
+}
+
 @media screen and (max-width: 768px){
     
     
     .progressThumb p:nth-child(1){
-        margin-right: 0px;
+        margin-right: 20px;
     }
     .progressBar{
-        margin-top: 20px;
         width: 90%;
         margin-inline: auto;
         height: 5px;

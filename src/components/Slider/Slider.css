@@ -45,3 +45,44 @@
     
 }
 
+.secondpost>img{
+    height: 40px;
+    width: 40px;
+}
+
+.secondpost{
+    display: flex;
+    gap: 10px;
+    margin-block: 40px;
+}
+
+.secondpost>div{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.secondpost>div>h4{
+    width: 100%;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+.secondpost>div>p{
+    width: 100%;
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0;
+}
+
+.swiper-button-disabled{
+    display: none;
+}
+
+@media screen and (max-width: 768px){
+    .secondpost{
+        width: 300px
+    }
+    
+}

@@ -12,6 +12,7 @@ import { teamdata } from '../data.mjs';
 import About from './Components/About/About.jsx';
 import { useParams } from 'react-router-dom';
 import Marketdata from './Components/Market/Market.jsx';
+import Sentiment from './Components/Sentiments/Sentiments.jsx';
 
 const Home = () => {
 
@@ -66,6 +67,7 @@ const Home = () => {
             <Price coinData={coin} />
             <Chart coin={coin} />
             <Marketdata coin={coin?.market_data} />
+            <Sentiment />
             <About prop={coin} />
             <Team teamdata={teamdata} />
         </div>
@@ -75,8 +77,8 @@ const Home = () => {
         </div>
     </div>
     <div className={styles.swipers}>
-        <Slider prop={trending} heading={"You may Also Like"} />
-        <Slider prop={trending} heading={"Trending"} />
+        <Slider prop={trending} heading={"You may Also Like"} option={1} />
+        <Slider prop={trending} heading={"Trending"} option={1}/>
         
     </div>
         </div>
