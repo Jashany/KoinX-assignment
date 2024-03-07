@@ -34,7 +34,7 @@ const Slider = ({prop,heading,option}) => {
                         },
                     }}
                 >
-                    {prop.map((item, index) => {
+                    {prop?.map((item, index) => {
                         return(
                             <SwiperSlide key={index}>
                                 {option === 1 ? <Post prop={item?.item} /> : <Secondpost prop={item} />}

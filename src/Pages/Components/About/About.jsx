@@ -15,14 +15,14 @@ const About = ({prop}) => {
 
       };
     const piedata = aboutdata.piechartdata;
-    const santizeddesc = DOMPurify.sanitize(prop.description?.en, {ALLOWED_TAGS: []})
+    const santizeddesc = DOMPurify.sanitize(prop?.description?.en, {ALLOWED_TAGS: []})
     return ( 
         <div>
             <div className={styles.aboutsection}>
             <h1>
-                About {prop.name}
+                About {prop?.name}
             </h1>
-            <h4>What is {prop.name}?</h4>
+            <h4>What is {prop?.name}?</h4>
             <p>
                 {santizeddesc}
             </p>
@@ -35,7 +35,7 @@ const About = ({prop}) => {
             </div>
             <div className={styles.aboutsection}>
                 <h1>
-                    Already Holding {prop.name}?
+                    Already Holding {prop?.name}?
                 </h1>
                 <div className={styles.aboutpostdiv}>
                 {aboutdata.aboutpost.map((post, index) => <Aboutpost key={index} post={post} />)}
