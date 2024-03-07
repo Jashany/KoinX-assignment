@@ -43,3 +43,89 @@
     cursor: pointer;
     font-family: var(--font-poppins);
 }
+
+    /* Hamburger menu */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .hamburgerMenu{
+    display: none;
+  }
+  
+  
+  /* Mobile styles */
+  @media (max-width: 768px) {
+
+    .hamburgerMenu{
+        display: block;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .responsive .hamburgerMenu{
+        position: absolute;
+        top: 50px;
+        right: 50px;
+    }
+    .items,
+    .button {
+      display: none;
+    }
+    .responsive .logo>img{
+        width: 100px;
+    }
+    .hamburger-menu {
+      display: flex;
+    }
+    
+    
+    .responsive .navbar{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.3s ease-out; /* Add this line */
+    	transform: translateX(0);
+        transition: height 0.5s ease-out;
+    }
+
+    .navbar {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.5s ease-out;
+    }
+    
+    .responsive .navbar .items,
+    .responsive .navbar .button {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+      gap: 10px;
+      padding-bottom: 10px;
+    }
+
+    .responsive .navbar .items .button{
+        color: black;
+        background-color: #1b4aee;
+        width: 60%;
+    }
+    
+    .responsive .navbar .items a,
+    .responsive .navbar .button {
+      width: 100%;
+      text-align: center;
+    }
+    .items>a{
+        display: block;
+    }
+
+  }
+  

@@ -1,10 +1,14 @@
-import React from 'react'
-import styles from './Navbar.module.css'
-import Logo from '../../Assets/Logo.svg'
+import React, { useState } from 'react';
+import styles from './Navbar.module.css';
+import Logo from '../../Assets/Logo.svg';
+import MenuIcon from '@mui/icons-material/Menu';
+import MenuOpenIcon from '@mui/icons-material/MenuOpen';
+
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const NavData = {
-    logo :{ 
+    logo: {
       src: Logo,
       alt: 'Logo',
     },
@@ -23,23 +27,29 @@ const Navbar = () => {
       }
     ],
   }
-  
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className={styles.navbar}>
+  <div className={`${isOpen ? styles.responsive: ''}`}>
+    <div className={`${styles.navbar}`}>
       <div className={styles.logo}>
         <img src={NavData.logo.src} alt={NavData.logo.alt} />
       </div>
+      <div className={styles.hamburgerMenu} onClick={toggleMenu}>
+          {isOpen ? <MenuOpenIcon /> : <MenuIcon />}
+      </div>
       <div className={styles.items}>
-        {NavData.navbar.map((item, index) => {
-          return (
-            <a key={index} href={item.href}>
-              {item.navitem}
-            </a>
-          )})}
-          <button className={styles.button}>Get Started</button>
+        {NavData.navbar.map((item, index) => (
+          <a key={index} href={item.href}>{item.navitem}</a>
+        ))}
+        <button className={styles.button}>Get Started</button>
       </div>
     </div>
-  )
+    </div>
+  );
 }
 
-export default Navbar
+export default Navbar;
