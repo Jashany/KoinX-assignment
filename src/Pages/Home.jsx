@@ -33,17 +33,6 @@ const Home = () => {
     }, []);
 
     useEffect(() => {
-        axios.get('/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=15&page=1&sparkline=false&locale=en')
-        .then(res => {
-            setMaylike(res.data);
-            console.log(res.data);
-        })
-        .catch(error => {
-            console.log(error);
-        });
-    }, []);
-
-    useEffect(() => {
         if (id) {
             axios.get(`/api/v3/coins/${id}?localization=true&tickers=false&market_data=true&community_data=false&developer_data=false`)
             .then(res => {
