@@ -98,5 +98,13 @@
     .secondpost{
         width: 300px
     }
+    .secondpost>img{
+        height: 30px;
+        width: 30px;
+    }
+    .extra-class .swiper-wrapper{
+        width: 100%;
+        margin-inline: 0px;
+    }   
     
 }

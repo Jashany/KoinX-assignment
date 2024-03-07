@@ -12,7 +12,7 @@ const Slider = ({prop,heading,option}) => {
         <div className="swiper-main">
             {option === 1 ? <h1>{heading}</h1> : null}
             
-            <div className="swipermain-inner">
+            <div className={`swipermain-inner  ${option === 2 ? 'extra-class' : ''}`} >
                 <Swiper
                     spaceBetween={50}
                     slidesPerView={option === 2 ? 1 : 1}

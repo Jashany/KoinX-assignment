@@ -20,6 +20,10 @@ display: flex;
   justify-content: space-between;
   background-color: #fff;
   margin-block: 3rem ;
+  overflow: scroll;
+  scrollbar-width: none;
+  gap: 30px;
+  
 }   
 
 .nav>a{
@@ -31,7 +35,7 @@ display: flex;
 
 .nav>a:nth-child(1) {
     border-bottom: 3px solid blue;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
     color: blue;
 }
  
