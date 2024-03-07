@@ -2,11 +2,10 @@
 import React, { useEffect, useRef, memo } from 'react';
 import styles from './Chart.module.css';
 
-function TradingViewWidget() {
+function TradingViewWidget(coin) {
   const container = useRef();
 
   useEffect(() => {
-    // Create the script only once
     const script = document.createElement("script");
     script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
     script.type = "text/javascript";
@@ -14,7 +13,7 @@ function TradingViewWidget() {
     script.innerHTML = `
       {
         "autosize": true,
-        "symbol": "BITSTAMP:BTCUSD",
+        "symbol": "CRYPTO:BTCUSD",
         "timezone": "Etc/UTC",
         "theme": "light",
         "style": "2",

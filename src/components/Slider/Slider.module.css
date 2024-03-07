@@ -1,0 +1,10 @@
+.main_post>div:nth-child(1)>img{
+    height: 20px;
+    width: 20px;
+}
+
+.main_post>div:nth-child(1){
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

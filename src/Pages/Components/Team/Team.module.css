@@ -1,0 +1,29 @@
+.team_card{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.teamdata_main h1{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.teamcards{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.team_card div:nth-child(1){
+    padding-top: 30px;
+    width: 20%;
+    text-align: center;
+}
+
+.team_card img{
+    height: 100px;
+    width: 95px;
+    border-radius: 10px;
+}

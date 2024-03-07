@@ -1,0 +1,39 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 20px;
+    background-color: #0052fe;
+    border-radius: 10px;
+}
+
+.main>img{
+    width: 100px;
+    height:100px;
+}
+
+.main h1{
+    font-size: 1.5rem;
+    width: 90%;
+    margin: 0;
+    color: white;
+}
+.main p{
+    font-size: 0.75rem;
+    margin: 0;
+    color: white;
+}
+
+.main>button{
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000000;
+    font-size: 1rem;
+    cursor: pointer;
+}

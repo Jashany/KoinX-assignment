@@ -1,0 +1,57 @@
+.aboutpost img{
+    width: 150px;
+    height: 100%;
+    border-radius: 10px;
+}
+.aboutpost{
+    flex: 1;
+    background-color: #318ca9;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.aboutpost button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.aboutpost h3{
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.aboutpostdiv{
+    width: 100%;
+    display: flex;
+    gap: 40px;
+}
+
+.aboutsection h1{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.aboutsection h4{
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.aboutsection p{
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
