@@ -22,7 +22,7 @@ const Home = () => {
     const [coin , setCoin] = useState([]);
 
     useEffect(() => {
-        axios.get('/api/v3/search/trending')
+        axios.get('https://api.coingecko.com/api/v3/search/trending')
         .then(res => {
             setTrending(res.data?.coins);
             console.log(res.data?.coins);
@@ -34,7 +34,7 @@ const Home = () => {
 
     useEffect(() => {
         if (id) {
-            axios.get(`/api/v3/coins/${id}?localization=true&tickers=false&market_data=true&community_data=false&developer_data=false`)
+            axios.get(`https://api.coingecko.com/api/v3/coins/${id}?localization=true&tickers=false&market_data=true&community_data=false&developer_data=false`)
             .then(res => {
                 setCoin(res.data);
                 console.log(res.data);

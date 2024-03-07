@@ -9,7 +9,7 @@ const Price = ({ coinData }) => {
     useEffect(() => {
         if (coinData?.id) {
             setLoading(true); // Start loading
-            axios.get(`/api/v3/simple/price?ids=${coinData?.id}&vs_currencies=inr,usd&include_24hr_change=true`)
+            axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${coinData?.id}&vs_currencies=inr,usd&include_24hr_change=true`)
                 .then(res => {
                     setCoinPrice(res.data[coinData?.id]); // Access the coin data dynamically
                     setLoading(false); // Stop loading after data is fetched
