@@ -1,16 +1,22 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import styles from './Slider.module.css';
+import 'swiper/css/navigation';
+import './Slider.css';
+import { Link } from 'react-router-dom';
 import DOMPurify from 'dompurify';
+import { Navigation } from 'swiper/modules';
 
 
-const Slider = ({prop}) => {
+const Slider = ({prop,heading}) => {
     return ( 
+    <div className="swiper-main">
+            <h1>{heading}</h1>
+        <div className="swipermain-inner">
         <Swiper
         spaceBetween={50}
         slidesPerView={5}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
+        navigation={true} 
+        modules={[Navigation]}
       >
       {prop.map((item, index) => {
           return(
@@ -20,6 +26,8 @@ const Slider = ({prop}) => {
           )
       })}
       </Swiper>
+        </div>
+    </div>
      );
 }
  
@@ -29,7 +37,8 @@ const Post = ({prop}) => {
     const pricechange = prop.data.price_change_percentage_24h.inr.toFixed(2);
     const sanitizedPrice = DOMPurify.sanitize(prop.data.price, {ALLOWED_TAGS: []});
     return ( 
-        <div className={styles.main_post}>
+        <Link to={`/${prop.id}`} className="link">
+        <div className="swipermain-post">
             <div>
                 <img src={prop.thumb} alt="" />
                 <h5>
@@ -41,9 +50,10 @@ const Post = ({prop}) => {
             </div>
             <div>
                 <p>{sanitizedPrice}</p>
-                {/* <img src={prop.data.sparkline} alt="" /> */}
+                <img src={prop.data?.sparkline} alt="" />
             </div>
         </div>
+        </Link>
      );
 }
  

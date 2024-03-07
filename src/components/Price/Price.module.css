@@ -1,5 +1,66 @@
 .price_coin{
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 5px;
+}
+
+.price_coin img{
+    width: 30px;
+    height: 30px;
+}
+
+.price_coin h1{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.price_coin p{
+    font-size: 1rem;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+.rank{
+    background-color: #768396;
+    padding: 8px 10px;
+    border-radius: 10px;
+    color: white;
+    margin-left: 30px;
+}
+
+.price_rate{
+    margin-block: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.price_rate>div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hour{
+    opacity: 0.7;
+    color: #768396;
+}
+
+.price_rate p{
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.price_rate h1{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-right: 40px;
+}
+
+
+.red{
+    color: red;
+}
+.green{
+    color: green;
 }

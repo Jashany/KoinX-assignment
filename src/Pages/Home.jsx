@@ -10,8 +10,12 @@ import Price from '../components/Price/Price.jsx';
 import Team from './Components/Team/Team.jsx';
 import { teamdata } from '../data.mjs';
 import About from './Components/About/About.jsx';
+import { useParams } from 'react-router-dom';
 
 const Home = () => {
+
+    const { id } = useParams();
+    console.log(id)
     const [trending, setTrending] = useState([]);
     const [coin , setCoin] = useState([]);
 
@@ -27,15 +31,17 @@ const Home = () => {
     }, []);
 
     useEffect(() => {
-        axios.get('/api/v3/coins/bitcoin?localization=true&tickers=false&market_data=true&community_data=false&developer_data=false')
-        .then(res => {
-            setCoin(res.data);
-            console.log(res.data);
-        })
-        .catch(error => {
-            console.log(error);
-        });
-    }, []);
+        if (id) {
+            axios.get(`/api/v3/coins/${id}?localization=true&tickers=false&market_data=true&community_data=false&developer_data=false`)
+            .then(res => {
+                setCoin(res.data);
+                console.log(res.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        }
+    }, [id]); 
 
     
     
@@ -46,15 +52,18 @@ const Home = () => {
     <div className={styles.innermain}>
         <div className={styles.left}>
             <Price coinData={coin} />
-            <Chart coin={coin.symbol} />
+            <Chart coin={coin} />
             <About prop={coin} />
             <Team teamdata={teamdata} />
-            <Slider prop={trending} />
         </div>
         <div className={styles.right}>
             <Ad ad={ad} />
             <Trending trending={trending} />
         </div>
+    </div>
+    <div className={styles.swipers}>
+        <Slider prop={trending} heading={"You may Also Like"} />
+        <Slider prop={trending} heading={"Trending"} />
     </div>
         </div>
      );

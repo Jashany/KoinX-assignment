@@ -1,4 +1,5 @@
 import styles from './Trending.module.css';
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 const Trending = ({trending}) => {
     
@@ -17,6 +18,7 @@ export default Trending;
 const TrendingPost = ({item}) => {
     const pricechange = item.data.price_change_percentage_24h.inr.toFixed(2);
     return ( 
+        <Link to={`/${item.id}` } className={styles.link}>
         <div className={styles.post}>
             <div className={styles.innerdiv}>
             <img src={item.thumb} alt="" />
@@ -24,6 +26,7 @@ const TrendingPost = ({item}) => {
             </div>
             <p>{pricechange}%</p>
         </div>
+        </Link>
      );
 }
  
