@@ -7,7 +7,7 @@ const Trending = ({trending}) => {
         <div className={styles.maintrend}>
             <h1>Trending Coins (24h)</h1>
             <div className={styles.trending}>
-                {trending.slice(0,3).map(item => <TrendingPost key={item.item.id} item={item.item} />)}
+                {trending.slice(0,3).map(item => <TrendingPost key={item.item?.id} item={item.item} />)}
             </div>
         </div>
      );
@@ -16,13 +16,13 @@ const Trending = ({trending}) => {
 export default Trending;
 
 const TrendingPost = ({item}) => {
-    const pricechange = item.data.price_change_percentage_24h.inr.toFixed(2);
+    const pricechange = item?.data?.price_change_percentage_24h.inr.toFixed(2);
     return ( 
-        <Link to={`/${item.id}` } className={styles.link}>
+        <Link to={`/${item?.id}` } className={styles.link}>
         <div className={styles.post}>
             <div className={styles.innerdiv}>
-            <img src={item.thumb} alt="" />
-            <p>{item.name}({item.symbol})</p>
+            <img src={item?.thumb} alt="" />
+            <p>{item?.name}({item?.symbol})</p>
             </div>
             <p>{pricechange}%</p>
         </div>

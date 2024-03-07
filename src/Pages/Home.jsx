@@ -24,8 +24,8 @@ const Home = () => {
     useEffect(() => {
         axios.get('/api/v3/search/trending')
         .then(res => {
-            setTrending(res.data.coins);
-            console.log(res.data.coins);
+            setTrending(res.data?.coins);
+            console.log(res.data?.coins);
         })
         .catch(error => {
             console.log(error);
@@ -50,7 +50,7 @@ const Home = () => {
     
     return ( 
         <div className={styles.main}>
-            <p>Cryptocurrencies &gt;&gt; {coin.name} </p>
+            <p>Cryptocurrencies &gt;&gt; {coin?.name} </p>
     <div className={styles.innermain}>
         <div className={styles.left}>
             <Price coinData={coin} />

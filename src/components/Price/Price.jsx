@@ -9,9 +9,9 @@ const Price = ({ coinData }) => {
     useEffect(() => {
         if (coinData?.id) {
             setLoading(true); // Start loading
-            axios.get(`/api/v3/simple/price?ids=${coinData.id}&vs_currencies=inr,usd&include_24hr_change=true`)
+            axios.get(`/api/v3/simple/price?ids=${coinData?.id}&vs_currencies=inr,usd&include_24hr_change=true`)
                 .then(res => {
-                    setCoinPrice(res.data[coinData.id]); // Access the coin data dynamically
+                    setCoinPrice(res.data[coinData?.id]); // Access the coin data dynamically
                     setLoading(false); // Stop loading after data is fetched
                 })
                 .catch(error => {
@@ -32,7 +32,7 @@ const Price = ({ coinData }) => {
     }
 
     // Check if coinPrice is defined and has properties to avoid rendering errors
-    const isPriceAvailable = coinPrice && coinPrice.usd && coinPrice.inr;
+    const isPriceAvailable = coinPrice && coinPrice?.usd && coinPrice?.inr;
     
     return ( 
         <div className={styles.price_main}>
@@ -42,7 +42,7 @@ const Price = ({ coinData }) => {
                 <p>{coinData.symbol?.toUpperCase()}</p>
                 <div className={styles.rank}>
                    <p>
-                   Rank #{coinData.market_cap_rank}
+                   Rank #{coinData?.market_cap_rank}
                     </p> 
                 </div>
             </div>
@@ -52,15 +52,15 @@ const Price = ({ coinData }) => {
                         <h1>${coinPrice.usd.toLocaleString()}.00</h1>
                         <p>
                             {coinPrice.usd_24h_change > 0 ? 
-                                <span className={styles.green}>+{coinPrice.usd_24h_change.toFixed(2)}%</span> : 
-                                <span className={styles.red}>{coinPrice.usd_24h_change.toFixed(2)}%</span> } 
+                                <span className={styles.green}>+{coinPrice?.usd_24h_change.toFixed(2)}%</span> : 
+                                <span className={styles.red}>{coinPrice?.usd_24h_change.toFixed(2)}%</span> } 
                         </p>
                         <p className={styles.hour}>
                             (24H)
                         </p>
                     </div>
                 ) : 'Price Information Unavailable'}
-                <p>₹{isPriceAvailable ? coinPrice.inr.toLocaleString() : 'Loading...'}</p>
+                <p>₹{isPriceAvailable ? coinPrice?.inr.toLocaleString() : 'Loading...'}</p>
             </div>
         </div>
     );  
